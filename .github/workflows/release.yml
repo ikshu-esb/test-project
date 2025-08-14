@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main # Runs only when merging to main
-
 jobs:
   release:
     runs-on: ubuntu-latest
