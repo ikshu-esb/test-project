@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: # ✅ ADD THIS
       contents: write # Required to push commits/tags
-      pull-requests: write 
+      pull-requests: write # Needed to create PRs
 
     steps:
       - name: Checkout repository
