@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: # ✅ ADD THIS
       contents: write # Required to push commits/tags
+      pull-requests: write # Needed to create PRs
 
     steps:
       - name: Checkout repository
@@ -44,6 +45,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: branch-from-${{ steps.get_tag.outputs.tag }}
-          base: pre-dev  # Target branch for PR
+          base: pre-dev   # Make sure this branch exists
           title: "PR for release ${{ steps.get_tag.outputs.tag }}"
           body: "This PR contains changes from tag ${{ steps.get_tag.outputs.tag }}."
